@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Immersive VR Hacking Scene</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+
+      <!-- Background: A dark matrix-like atmosphere -->
+      <a-sky color="#0b0d10"></a-sky>
+
+      <!-- Floating terminal screen -->
+      <a-plane position="0 1.5 -3" rotation="0 0 0" width="2" height="1.5" color="#202020">
+        <a-text value="Accessing mainframe...\n> Decrypting data..." 
+                color="#00ff00" 
+                width="1.8" 
+                position="-0.9 0.6 0.01"></a-text>
+      </a-plane>
+
+      <!-- Floating green code (Matrix-like) -->
+      <a-entity geometry="primitive: plane; width: 2; height: 2"
+                material="color: #001800; opacity: 0.8"
+                position="0 2.5 -3">
+        <a-text value="1010110 1010101 01010101\n1101001 1011011 10101111" 
+                color="#00ff00" 
+                width="2.5" 
+                position="-1.2 1 0.01"></a-text>
+      </a-entity>
+
+      <!-- Glowing red light for atmosphere -->
+      <a-light type="point" color="#ff0000" intensity="0.6" position="1 2 -2"></a-light>
+
+      <!-- Console panel in front of the user -->
+      <a-box position="0 0.5 -2" depth="0.1" height="0.5" width="1.5" color="#202020">
+        <a-text value="CONNECTING TO SERVER...\n> AUTHORIZATION GRANTED" 
+                color="#00ff00" 
+                width="1.4" 
+                position="-0.7 0.2 0.05"></a-text>
+      </a-box>
+
+      <!-- Interactive Button -->
+      <a-box position="-0.5 0.8 -1.5" depth="0.1" height="0.2" width="0.4" color="#303030"
+             event-set__click="_event: click; material.color: #ff0000">
+        <a-text value="HACK" color="#ffffff" width="1" position="-0.18 0.05 0.05"></a-text>
+      </a-box>
+
+      <!-- VR Controllers -->
+      <a-entity laser-controls="hand: left"></a-entity>
+      <a-entity laser-controls="hand: right"></a-entity>
+
+      <!-- Camera -->
+      <a-entity camera look-controls wasd-controls></a-entity>
+
+    </a-scene>
+  </body>
+</html>
